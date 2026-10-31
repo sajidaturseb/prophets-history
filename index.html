@@ -39,13 +39,14 @@
     input[type=text],select,textarea{border-color:#cbdcba}input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px #79a64b30}
     .reading{max-width:900px;margin:28px 0}.reading section{margin:29px 0}.reading h3{font:700 clamp(23px,3vw,32px)/1.2 Georgia,serif;color:var(--deep);margin:0 0 13px}.reading p{margin:11px 0;line-height:1.72}.reading .source{font-size:15px;color:var(--muted)}.reading .note-text{border-left:3px solid #9aba6d;padding-left:15px;color:#45663c}
     #studentGroup,#teacherGroup{font-weight:800;min-height:58px}#studentGroup option,#teacherGroup option{font-weight:700}
-    @media(max-width:850px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.teacher{order:-1}.top{padding:14px}.brand strong{font-size:20px}.pill{display:none}.score{grid-template-columns:1fr}main{min-height:0}}
+    .language-switch{display:flex;gap:5px;padding:4px;border:1px solid #c9df93;border-radius:999px;margin-left:auto}.language-switch button{border:0;border-radius:999px;padding:7px 13px;background:transparent;color:#fff;font-size:15px;font-weight:800}.language-switch button[aria-pressed=true]{background:#fff;color:#294d27}
+    @media(max-width:850px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.teacher{order:-1}.top{padding:14px;flex-wrap:wrap}.brand strong{font-size:20px}.pill{display:none}.score{grid-template-columns:1fr}.language-switch button{padding:7px 9px;font-size:13px}}
     @media(max-width:420px){h1{font-size:32px}h2{font-size:29px}.wrap{width:calc(100% - 16px);margin-top:8px}main{padding:24px 18px}.lead{font-size:17px}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="top"><div class="brand"><span class="mark" aria-hidden="true">✦</span><div><strong>Пәйгамбәрләр тарихы</strong><small>25 ДӘРЕС · 44 ТЕМА</small></div></div><span class="pill" id="coursePill">25 дәрес</span></header>
+    <header class="top"><div class="brand"><span class="mark" aria-hidden="true">✦</span><div><strong>Пәйгамбәрләр тарихы</strong><small>25 ДӘРЕС · 44 ТЕМА</small></div></div><nav class="language-switch" aria-label="Тел / Язык"><button type="button" data-lang="tt" aria-pressed="true">Татарча</button><button type="button" data-lang="ru" aria-pressed="false">Русский</button></nav><span class="pill" id="coursePill">25 дәрес</span></header>
     <div class="progress hidden" id="progress"><div class="progress-line"><span id="stageName"></span><span id="stageCount"></span></div><div class="track"><div class="fill" id="stageFill"></div></div></div>
     <main>
       <section id="home"><div class="grid"><div><p class="eyebrow">Пәйгамбәрләр тарихы</p><h1>Дәресләр һәм белемне тикшерү</h1><p class="lead">25 дәрестә 44 теманы өйрәнәбез. Һәр дәрестә текстны укып, җиде сорау белән кабатлыйбыз, аннары алты тест соравына һәм бер ачык биремгә җавап бирәбез.</p><div class="cards" id="lessonCards"></div></div><aside class="teacher"><p class="eyebrow">Укытучы өчен</p><h2>Дәрес сылтамасы</h2><p>Дәресне һәм төркемне сайлап, укучыга әзер сылтама җибәрегез.</p><label class="field">Дәрес<select id="teacherLesson"></select></label><label class="field">Группа<select id="teacherGroup"></select></label><button class="primary" id="copyLinkBtn" type="button">Сылтаманы күчерергә</button><p class="small" id="copyNote" role="status"></p><input class="hidden" id="teacherLink" type="text" readonly aria-label="Дәрес сылтамасы"><p><a href="teacher.html">Нәтиҗәләр журналы →</a></p></aside></div></section>
@@ -56,6 +57,6 @@
       <section id="result" class="hidden"><p class="eyebrow">Дәрес тәмам</p><h1>Мәә шәә Аллаһ, син дәресне үттең!</h1><p class="lead" id="resultText"></p><div class="score"><div><strong id="scoreText"></strong><span>Дөрес җавап</span></div></div><div class="note">Ачык җавабыңны укытучы журналында да карап була.</div><h2>Ачык җавабың</h2><p class="open-preview" id="openPreview"></p><p class="result-instruction hidden" id="sendInstruction" role="status" aria-live="polite"></p><div class="actions"><button class="primary hidden" id="sendResultBtn" type="button" aria-describedby="sendInstruction">Кабат җибәрергә</button><button class="secondary" id="retryBtn" type="button">Кабат үтәргә</button></div><p class="small" id="resultSendNote" role="status" aria-live="polite"></p></section>
     </main>
   </div>
-  <script src="lessons.js?v=1"></script><script src="app.js?v=journal-confirm-20261030"></script>
+  <script src="lessons.js?v=ru-20261031"></script><script src="lessons-ru.js?v=ru-20261031"></script><script src="app.js?v=ru-20261031"></script>
 </body>
 </html>
